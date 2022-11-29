@@ -24,7 +24,7 @@
     <component name="moqui-html-pdf" group="mkdecisiondev" version="v1.1.0" branch="master"/>
     <component name="mk-integrations" group="mkdecisiondev" version="v1.9.2" branch="master"/>
     <component name="moqui-creditconnect" group="mkdecisiondev" version="v1.5.2" branch="master"/>
-    <component name="moqui-creditconnect-experian" group="mkdecisiondev" version="v1.5.0" branch="master"/>
+    <component name="moqui-creditconnect-experian" group="mkdecisiondev" version="v1.5.1" branch="master"/>
     <component name="moqui-creditconnect-transunion" group="mkdecisiondev" version="v1.4.2" branch="master"/>
     <component name="mk-idology" group="mkdecisiondev" version="v1.1.0" branch="master"/>
     <component name="mk-identity" group="mkdecisiondev" version="v1.1.0" branch="master"/>
