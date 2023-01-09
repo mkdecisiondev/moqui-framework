@@ -73,6 +73,7 @@
     <component name="close-ihcu-data" group="mkdecisiondev" version="" branch="master"/>
     <component name="close-bankofcommerce-data" group="mkdecisiondev" version="" branch="master"/>
     <component name="close-mascoma-data" group="mkdecisiondev" version="" branch="master"/>
+    <component name="close-ffbla-data" group="mkdecisiondev" version="" branch="master"/>
 
     <!-- base component sets -->
     <component-set name="base-moqui" components="moqui-aws,moqui-fop,moqui-sftp,mantle-udm,mantle-usl,SimpleScreens,MarbleERP"/>
@@ -109,5 +110,6 @@
     <component-set name="moqui-close-ihcu" sets="base-moqui,base-close-keycloak" components="close-ihcu-data"/>
     <component-set name="moqui-close-bankofcommerce" sets="base-moqui,base-close-keycloak" components="close-bankofcommerce-data"/>
     <component-set name="moqui-close-mascoma" sets="base-moqui,base-close-keycloak" components="close-mascoma-data"/>
+    <component-set name="moqui-close-ffbla" sets="base-moqui,base-close-keycloak" components="close-ffbla-data"/>
 
 </addons>
