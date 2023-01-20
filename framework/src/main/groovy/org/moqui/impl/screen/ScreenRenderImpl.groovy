@@ -1629,13 +1629,8 @@ class ScreenRenderImpl implements ScreenRender {
     Map<String, Object> getFormFieldValues(MNode formNode) {
         Map<String, Object> fieldValues = new LinkedHashMap<>()
 
-        if ("true".equals(formNode.attribute("pass-through-parameters"))) {
-            UrlInstance currentFindUrl = getScreenUrlInstance().cloneUrlInstance()
-                    .removeParameter("moquiFormName").removeParameter("moquiSessionToken")
-                    .removeParameter("lastStandalone").removeParameter("formListFindId")
-                    .removeParameter("moquiRequestStartTime").removeParameter("webrootTT")
-            fieldValues.putAll(currentFindUrl.getParameterMap())
-        }
+        if ("true".equals(formNode.attribute("pass-through-parameters")))
+            fieldValues.putAll(getScreenUrlInstance().getPassThroughParameterMap())
 
         fieldValues.put("moquiFormName", formNode.attribute("name"))
         String lastUpdatedString = getNamedValuePlain("lastUpdatedStamp", formNode)
@@ -2351,8 +2346,9 @@ class ScreenRenderImpl implements ScreenRender {
             String imageType = sui.menuImageType
             if (image != null && !image.isEmpty() && (imageType == null || imageType.isEmpty() || "url-screen".equals(imageType)))
                 image = buildUrl(image).url
+            String menuTitle = ec.l10n.localize(curSsi.menuTitle) ?: curScreen.getDefaultMenuName()
 
-            menuDataList.add([name:pathItem, title:curScreen.getDefaultMenuName(), subscreens:subscreensList, path:curScreenPath,
+            menuDataList.add([name:pathItem, title:menuTitle, subscreens:subscreensList, path:curScreenPath,
                     pathWithParams:curPathWithParams, hasTabMenu:curScreen.hasTabMenu(), renderModes:curScreen.renderModes, image:image, imageType:imageType])
             // not needed: screenStatic:curScreen.isServerStatic(renderMode)
         }
@@ -2368,7 +2364,9 @@ class ScreenRenderImpl implements ScreenRender {
         String lastImageType = fullUrlInfo.menuImageType
         if (lastImage != null && !lastImage.isEmpty() && (lastImageType == null || lastImageType.isEmpty() || "url-screen".equals(lastImageType)))
             lastImage = buildUrl(lastImage).url
-        String lastTitle = fullUrlInfo.targetScreen.getDefaultMenuName()
+
+        SubscreensItem lastSsi = curScreen.getSubscreensItem(lastPathItem)
+        String lastTitle = ec.l10n.localize(lastSsi?.menuTitle) ?: fullUrlInfo.targetScreen.getDefaultMenuName()
         if (lastTitle.contains('${')) lastTitle = ec.resourceFacade.expand(lastTitle, "")
         List<Map<String, Object>> screenDocList = fullUrlInfo.targetScreen.getScreenDocumentInfoList()
 
