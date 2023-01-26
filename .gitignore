@@ -1,6 +1,3 @@
-# normally excluded for git, using in stabilization branch for convenience
-# myaddons.xml
-
 # gradle/build files
 build
 .gradle
@@ -15,6 +12,8 @@ build
 /execwartmp
 /docker/runtime
 /docker/db
+/docker/elasticsearch/data/nodes
+/docker/opensearch/data/nodes
 
 # IntelliJ IDEA files
 .idea

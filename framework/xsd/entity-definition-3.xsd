@@ -13,7 +13,7 @@ along with this software (see the LICENSE.md file). If not, see
 <http://creativecommons.org/publicdomain/zero/1.0/>.
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
-    <xs:include schemaLocation="common-types-2.1.xsd"/>
+    <xs:include schemaLocation="common-types-3.xsd"/>
 
     <xs:simpleType name="cache-options">
         <xs:restriction base="xs:token">
@@ -105,6 +105,8 @@ along with this software (see the LICENSE.md file). If not, see
                         configuration data; eventual consistency is okay; typically cached</xs:documentation></xs:annotation></xs:enumeration>
                     <xs:enumeration value="analytical"><xs:annotation><xs:documentation>analytical entities with data
                         typically derived from transactional data</xs:documentation></xs:annotation></xs:enumeration>
+                    <xs:enumeration value="logging"><xs:annotation><xs:documentation>entities used for logging with
+                        non-transactional data that is generated in high volumes and used mostly for auditing and analytics</xs:documentation></xs:annotation></xs:enumeration>
                 </xs:restriction></xs:simpleType>
             </xs:attribute>
             <xs:attribute name="sequence-primary-use-uuid" type="boolean" default="false">
