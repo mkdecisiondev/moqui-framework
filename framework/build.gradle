@@ -24,7 +24,7 @@ apply plugin: 'com.github.ben-manes.versions'
 buildscript {
     repositories {
         mavenCentral()
-        maven { url "https://plugins.gradle.org/m2/" }
+        gradlePluginPortal()
     }
     dependencies {
         classpath 'com.github.ben-manes:gradle-versions-plugin:0.42.0'
