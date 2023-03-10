@@ -112,6 +112,6 @@
     <component-set name="moqui-close-bankofcommerce" sets="base-moqui,base-close-keycloak" components="close-bankofcommerce-data"/>
     <component-set name="moqui-close-mascoma" sets="base-moqui,base-close-keycloak" components="close-mascoma-data"/>
     <component-set name="moqui-close-ffbla" sets="base-moqui,base-close-keycloak" components="close-ffbla-data"/>
-    <component-set name="moqui-close-tegcfu" sets="base-moqui,base-close-keycloak" components="close-tegfcu-data"/>
+    <component-set name="moqui-close-tegfcu" sets="base-moqui,base-close-keycloak" components="close-tegfcu-data"/>
 
 </addons>
