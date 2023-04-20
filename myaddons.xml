@@ -30,7 +30,7 @@
     <component name="mk-identity" group="mkdecisiondev" version="v1.3.0" branch="master"/>
     <component name="moqui-preciseid" group="mkdecisiondev" version="v1.3.0" branch="master"/>
     <component name="moqui-coreconnect" group="mkdecisiondev" version="v1.2.0" branch="master"/>
-    <component name="moqui-coreconnect-fis" group="mkdecisiondev" version="v1.3.0" branch="master"/>
+    <component name="moqui-coreconnect-fis" group="mkdecisiondev" version="v1.4.0" branch="master"/>
     <component name="moqui-pac4j-authentication" group="mkdecisiondev" version="v1.3.0" branch="master"/>
     <component name="moqui-sentry-logging" group="mkdecisiondev" version="v1.2.0" branch="master"/>
     <component name="moqui-naics" group="mkdecisiondev" version="v1.2.0" branch="master"/>
