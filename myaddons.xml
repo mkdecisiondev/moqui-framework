@@ -11,7 +11,7 @@
     <component name="MarbleERP" group="mkdecisiondev" version="v1.2.0-alk" branch="master"/>
 
     <!-- ignite components -->
-    <component name="mk-store" group="mkdecisiondev" version="v1.23.0" branch="master"/>
+    <component name="mk-store" group="mkdecisiondev" version="v1.23.1" branch="master"/>
     <component name="moqui-credit-offers" group="mkdecisiondev" version="v1.7.0" branch="master"/>
     <component name="daolos-vendor-dashboard" group="mkdecisiondev" version="v1.11.0" branch="master"/>
     <component name="moqui-financial-worksheet" group="mkdecisiondev" version="v1.4.0" branch="master"/>
