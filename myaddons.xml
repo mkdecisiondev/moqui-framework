@@ -78,6 +78,8 @@
     <component name="close-premierbank-data" group="mkdecisiondev" version="" branch="master"/>
     <component name="close-cutx-data" group="mkdecisiondev" version="" branch="master"/>
     <component name="close-revfcu-data" group="mkdecisiondev" version="" branch="master"/>
+    <component name="close-merckemployeesfcu-data" group="mkdecisiondev" version="" branch="master"/>
+    
 
     <!-- base component sets -->
     <component-set name="base-moqui" components="moqui-aws,moqui-fop,moqui-sftp,mantle-udm,mantle-usl,SimpleScreens,MarbleERP"/>
@@ -119,5 +121,7 @@
     <component-set name="moqui-close-premierbank" sets="base-moqui,base-close-keycloak" components="close-premierbank-data"/>
     <component-set name="moqui-close-revfcu" sets="base-moqui,base-close-keycloak" components="close-revfcu-data"/>
     <component-set name="moqui-close-cutx" sets="base-moqui,base-close-keycloak" components="close-cutx-data"/>
+    <component-set name="moqui-close-merckemployeesfcu" sets="base-moqui,base-close-keycloak" components="close-merckemployeesfcu-data"/>
+    
 
 </addons>
