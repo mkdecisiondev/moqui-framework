@@ -32,7 +32,6 @@
     <component name="moqui-coreconnect" group="mkdecisiondev" version="v1.2.0" branch="master"/>
     <component name="moqui-coreconnect-fis" group="mkdecisiondev" version="v1.4.0" branch="master"/>
     <component name="moqui-pac4j-authentication" group="mkdecisiondev" version="v1.3.0" branch="master"/>
-    <component name="moqui-sentry-logging" group="mkdecisiondev" version="v1.2.0" branch="master"/>
     <component name="moqui-naics" group="mkdecisiondev" version="v1.2.0" branch="master"/>
     <component name="moqui-graphql" group="mkdecisiondev" version="v1.2.0-alk" branch="master"/>
     <component name="moqui-datawarehouse" group="mkdecisiondev" version="" branch="master"/>
@@ -83,8 +82,8 @@
 
     <!-- base component sets -->
     <component-set name="base-moqui" components="moqui-aws,moqui-fop,moqui-sftp,mantle-udm,mantle-usl,SimpleScreens,MarbleERP"/>
-    <component-set name="base-close-moqui" components="moqui-secure-headers,close-customer-portal,daolos-vendor-dashboard,mk-identity,mk-idology,mk-integrations,mk-services,mk-store,moqui-ccos,moqui-close,moqui-close-decision,moqui-coreconnect,moqui-coreconnect-fis,moqui-credit-offers,moqui-creditconnect,moqui-creditconnect-experian,moqui-creditconnect-transunion,moqui-financial-worksheet,moqui-graphql,moqui-html-pdf,moqui-mk-dashboard,moqui-naics,moqui-preciseid,moqui-sentry-logging"/>
-    <component-set name="base-close-keycloak" components="moqui-secure-headers,close-customer-portal,daolos-vendor-dashboard,mk-identity,mk-idology,mk-integrations,mk-services,mk-store,moqui-ccos,moqui-close,moqui-close-decision,moqui-coreconnect,moqui-coreconnect-fis,moqui-credit-offers,moqui-creditconnect,moqui-creditconnect-experian,moqui-creditconnect-transunion,moqui-financial-worksheet,moqui-graphql,moqui-html-pdf,moqui-mk-dashboard,moqui-naics,moqui-pac4j-authentication,moqui-preciseid,moqui-sentry-logging"/>
+    <component-set name="base-close-moqui" components="moqui-secure-headers,close-customer-portal,daolos-vendor-dashboard,mk-identity,mk-idology,mk-integrations,mk-services,mk-store,moqui-ccos,moqui-close,moqui-close-decision,moqui-coreconnect,moqui-coreconnect-fis,moqui-credit-offers,moqui-creditconnect,moqui-creditconnect-experian,moqui-creditconnect-transunion,moqui-financial-worksheet,moqui-graphql,moqui-html-pdf,moqui-mk-dashboard,moqui-naics,moqui-preciseid"/>
+    <component-set name="base-close-keycloak" components="moqui-secure-headers,close-customer-portal,daolos-vendor-dashboard,mk-identity,mk-idology,mk-integrations,mk-services,mk-store,moqui-ccos,moqui-close,moqui-close-decision,moqui-coreconnect,moqui-coreconnect-fis,moqui-credit-offers,moqui-creditconnect,moqui-creditconnect-experian,moqui-creditconnect-transunion,moqui-financial-worksheet,moqui-graphql,moqui-html-pdf,moqui-mk-dashboard,moqui-naics,moqui-pac4j-authentication,moqui-preciseid"/>
 
     <!-- customer component sets -->
     <component-set name="moqui-close-alabamacu" sets="base-moqui,base-close-keycloak" components="close-alabamacu-data"/>
@@ -122,6 +121,5 @@
     <component-set name="moqui-close-revfcu" sets="base-moqui,base-close-keycloak" components="close-revfcu-data"/>
     <component-set name="moqui-close-cutx" sets="base-moqui,base-close-keycloak" components="close-cutx-data"/>
     <component-set name="moqui-close-merckemployeesfcu" sets="base-moqui,base-close-keycloak" components="close-merckemployeesfcu-data"/>
-    
 
 </addons>
