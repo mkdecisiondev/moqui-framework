@@ -3,7 +3,7 @@
     <!-- moqui components -->
     <runtime name="moqui-runtime" group="mkdecisiondev" version="v3.2.0-alk" branch="master"/>
     <component name="mantle-udm" group="mkdecisiondev" version="v2.4.0-alk" branch="master"/>
-    <component name="mantle-usl" group="mkdecisiondev" version="v2.7.0-alk" branch="master"/>
+    <component name="mantle-usl" group="mkdecisiondev" version="v2.7.1-alk" branch="master"/>
     <component name="moqui-aws" group="mkdecisiondev" version="v1.6.0-alk" branch="master"/>
     <component name="moqui-fop" group="mkdecisiondev" version="v1.3.0-alk" branch="master"/>
     <component name="moqui-sftp" group="mkdecisiondev" version="v1.1.0-alk" branch="master"/>
