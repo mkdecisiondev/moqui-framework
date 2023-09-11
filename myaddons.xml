@@ -1,4 +1,4 @@
-<addons default-repository="github">
+<addons default-repository="github-ssh">
 
     <!-- moqui components -->
     <runtime name="moqui-runtime" group="mkdecisiondev" version="v3.2.1-alk" branch="master"/>
