@@ -928,7 +928,7 @@ task listComponents(){
                                 for (comp in componentSetsList){
                                     def componentNode =  myaddons.'component'.find {it.@name == comp}
                                     if (componentNode) {
-                                        logger.lifecycle("${componentNode.@name}:${componentNode?.@version ?: 'latest'}")
+                                        logger.lifecycle("${componentNode.@name}:${componentNode?.@version ?: (componentNode?.@branch ?: 'latest')}")
                                     } else {
                                         logger.lifecycle("component was not found ${comp}")
                                     }
