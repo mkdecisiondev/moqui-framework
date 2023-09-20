@@ -1,42 +1,42 @@
 <addons default-repository="github-ssh">
 
     <!-- moqui components -->
-    <runtime name="moqui-runtime" group="mkdecisiondev" version="" branch="sec-vulnerabilities"/>
-    <component name="mantle-udm" group="mkdecisiondev" version="" branch="sec-vulnerabilities"/>
-    <component name="mantle-usl" group="mkdecisiondev" version="" branch="sec-vulnerabilities"/>
-    <component name="moqui-aws" group="mkdecisiondev" version="" branch="sec-vulnerabilities"/>
-    <component name="moqui-fop" group="mkdecisiondev" version="" branch="sec-vulnerabilities"/>
-    <component name="moqui-sftp" group="mkdecisiondev" version="" branch="sec-vulnerabilities"/>
-    <component name="SimpleScreens" group="mkdecisiondev" version="" branch="sec-vulnerabilities"/>
-    <component name="MarbleERP" group="mkdecisiondev" version="" branch="sec-vulnerabilities"/>
+    <runtime name="moqui-runtime" group="mkdecisiondev" version="v3.2.1-sec" branch="sec-vulnerabilities"/>
+    <component name="mantle-udm" group="mkdecisiondev" version="v2.4.1-sec" branch="sec-vulnerabilities"/>
+    <component name="mantle-usl" group="mkdecisiondev" version="v2.7.2-sec" branch="sec-vulnerabilities"/>
+    <component name="moqui-aws" group="mkdecisiondev" version="v1.6.0-sec" branch="sec-vulnerabilities"/>
+    <component name="moqui-fop" group="mkdecisiondev" version="v1.3.1-sec" branch="sec-vulnerabilities"/>
+    <component name="moqui-sftp" group="mkdecisiondev" version="v1.1.0-sec" branch="sec-vulnerabilities"/>
+    <component name="SimpleScreens" group="mkdecisiondev" version="v2.5.0-sec" branch="sec-vulnerabilities"/>
+    <component name="MarbleERP" group="mkdecisiondev" version="v1.2.0-sec" branch="sec-vulnerabilities"/>
 
     <!-- ignite components -->
-    <component name="mk-store" group="mkdecisiondev" version="" branch="sec-vulnerabilities"/>
-    <component name="moqui-credit-offers" group="mkdecisiondev" version="" branch="sec-vulnerabilities"/>
-    <component name="daolos-vendor-dashboard" group="mkdecisiondev" version="" branch="sec-vulnerabilities"/>
-    <component name="moqui-financial-worksheet" group="mkdecisiondev" version="" branch="sec-vulnerabilities"/>
-    <component name="moqui-close-decision" group="mkdecisiondev" version="" branch="sec-vulnerabilities"/>
-    <component name="moqui-close" group="mkdecisiondev" version="" branch="sec-vulnerabilities"/>
-    <component name="mk-services" group="mkdecisiondev" version="" branch="sec-vulnerabilities"/>
-    <component name="moqui-ccos" group="mkdecisiondev" version="" branch="sec-vulnerabilities"/>
-    <component name="moqui-mk-dashboard" group="mkdecisiondev" version="" branch="sec-vulnerabilities"/>
-    <component name="close-customer-portal" group="mkdecisiondev" version="" branch="sec-vulnerabilities"/>
-    <component name="moqui-html-pdf" group="mkdecisiondev" version="" branch="sec-vulnerabilities"/>
-    <component name="mk-integrations" group="mkdecisiondev" version="" branch="sec-vulnerabilities"/>
-    <component name="moqui-creditconnect" group="mkdecisiondev" version="" branch="sec-vulnerabilities"/>
-    <component name="moqui-creditconnect-experian" group="mkdecisiondev" version="" branch="sec-vulnerabilities"/>
-    <component name="moqui-creditconnect-transunion" group="mkdecisiondev" version="" branch="sec-vulnerabilities"/>
-    <component name="mk-idology" group="mkdecisiondev" version="" branch="sec-vulnerabilities"/>
-    <component name="mk-identity" group="mkdecisiondev" version="" branch="sec-vulnerabilities"/>
-    <component name="moqui-preciseid" group="mkdecisiondev" version="" branch="sec-vulnerabilities"/>
-    <component name="moqui-coreconnect" group="mkdecisiondev" version="" branch="sec-vulnerabilities"/>
-    <component name="moqui-coreconnect-fis" group="mkdecisiondev" version="" branch="sec-vulnerabilities"/>
-    <component name="moqui-pac4j-authentication" group="mkdecisiondev" version="" branch="sec-vulnerabilities"/>
-    <component name="moqui-naics" group="mkdecisiondev" version="" branch="sec-vulnerabilities"/>
-    <component name="moqui-graphql" group="mkdecisiondev" version="" branch="sec-vulnerabilities"/>
+    <component name="mk-store" group="mkdecisiondev" version="v1.30.0-sec" branch="sec-vulnerabilities"/>
+    <component name="moqui-credit-offers" group="mkdecisiondev" version="v1.7.0-sec" branch="sec-vulnerabilities"/>
+    <component name="daolos-vendor-dashboard" group="mkdecisiondev" version="v1.11.0-sec" branch="sec-vulnerabilities"/>
+    <component name="moqui-financial-worksheet" group="mkdecisiondev" version="v1.4.0-sec" branch="sec-vulnerabilities"/>
+    <component name="moqui-close-decision" group="mkdecisiondev" version="v1.20.0-sec" branch="sec-vulnerabilities"/>
+    <component name="moqui-close" group="mkdecisiondev" version="v1.32.0-sec" branch="sec-vulnerabilities"/>
+    <component name="mk-services" group="mkdecisiondev" version="v1.30.0-sec" branch="sec-vulnerabilities"/>
+    <component name="moqui-ccos" group="mkdecisiondev" version="v1.12.0-sec" branch="sec-vulnerabilities"/>
+    <component name="moqui-mk-dashboard" group="mkdecisiondev" version="v1.25.1-sec" branch="sec-vulnerabilities"/>
+    <component name="close-customer-portal" group="mkdecisiondev" version="v1.6.0-sec" branch="sec-vulnerabilities"/>
+    <component name="moqui-html-pdf" group="mkdecisiondev" version="v1.2.0-sec" branch="sec-vulnerabilities"/>
+    <component name="mk-integrations" group="mkdecisiondev" version="v1.28.0-sec" branch="sec-vulnerabilities"/>
+    <component name="moqui-creditconnect" group="mkdecisiondev" version="v1.8.0-sec" branch="sec-vulnerabilities"/>
+    <component name="moqui-creditconnect-experian" group="mkdecisiondev" version="v1.8.0-sec" branch="sec-vulnerabilities"/>
+    <component name="moqui-creditconnect-transunion" group="mkdecisiondev" version="v1.7.0-sec" branch="sec-vulnerabilities"/>
+    <component name="mk-idology" group="mkdecisiondev" version="v1.4.0-sec" branch="sec-vulnerabilities"/>
+    <component name="mk-identity" group="mkdecisiondev" version="v1.3.0-sec" branch="sec-vulnerabilities"/>
+    <component name="moqui-preciseid" group="mkdecisiondev" version="v1.3.0-sec" branch="sec-vulnerabilities"/>
+    <component name="moqui-coreconnect" group="mkdecisiondev" version="v1.2.0-sec" branch="sec-vulnerabilities"/>
+    <component name="moqui-coreconnect-fis" group="mkdecisiondev" version="v1.5.0-sec" branch="sec-vulnerabilities"/>
+    <component name="moqui-pac4j-authentication" group="mkdecisiondev" version="v1.3.0-sec" branch="sec-vulnerabilities"/>
+    <component name="moqui-naics" group="mkdecisiondev" version="v1.2.0-sec" branch="sec-vulnerabilities"/>
+    <component name="moqui-graphql" group="mkdecisiondev" version="v1.2.0-sec" branch="sec-vulnerabilities"/>
     <component name="moqui-datawarehouse" group="mkdecisiondev" version="" branch="sec-vulnerabilities"/>
-    <component name="close-banker-portal" group="mkdecisiondev" version="" branch="sec-vulnerabilities"/>
-    <component name="moqui-secure-headers" group="mkdecisiondev" version="" branch="sec-vulnerabilities"/>
+    <component name="close-banker-portal" group="mkdecisiondev" version="v1.1.0-sec" branch="sec-vulnerabilities"/>
+    <component name="moqui-secure-headers" group="mkdecisiondev" version="v1.0.0-sec" branch="sec-vulnerabilities"/>
     <component name="alkami-dev-toolkit" group="mkdecisiondev" version="" branch="dev"/>
 
     <!-- customer data components -->
