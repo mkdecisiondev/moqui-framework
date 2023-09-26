@@ -1111,6 +1111,19 @@ class ScreenRenderImpl implements ScreenRender {
         return activePath
     }
 
+    // TODO: This may not be the actual place we decided on, but due to lost work this is my best guess
+    // Get the first screen path of the parent screens with a transition specified of the currently rendered screen
+    String getScreenPathHasTransition(String transitionName) {
+        int screenPathDefListSize = screenUrlInfo.screenPathDefList.size()
+        for (int i = 0; i < screenPathDefListSize; i++) {
+            ScreenDefinition screenDef = (ScreenDefinition) screenUrlInfo.screenPathDefList.get(i)
+            if (screenDef.hasTransition(transitionName)) {
+                return '/' + screenUrlInfo.fullPathNameList.subList(0,i).join('/') + (i == 0 ? '' : '/')
+            }
+        }
+        return null
+    }
+
     String renderSubscreen() {
         // first see if there is another screen def in the list
         if (!getActiveScreenHasNext()) {
@@ -1196,7 +1209,15 @@ class ScreenRenderImpl implements ScreenRender {
         return ""
     }
 
-    String renderSectionInclude(MNode sectionIncludeNode) {
+    MNode getSectionIncludedNode(MNode sectionIncludeNode) {
+        ScreenDefinition sd = getActiveScreenDef()
+        String sectionName = getSectionIncludeName(sectionIncludeNode)
+        ScreenSection section = sd.getSection(sectionName)
+        if (section == null) throw new BaseArtifactException("No section with name [${sectionName}] in screen [${sd.location}]")
+        return section.sectionNode
+    }
+
+    String getSectionIncludeName(MNode sectionIncludeNode) {
         String sectionLocation = sectionIncludeNode.attribute("location")
         String sectionName = sectionIncludeNode.attribute("name")
         boolean isDynamic = (sectionLocation != null && sectionLocation.contains('${')) || (sectionName != null && sectionName.contains('${'))
@@ -1207,10 +1228,13 @@ class ScreenRenderImpl implements ScreenRender {
             String cacheName = sectionLocation + "#" + sectionName
             if (sd.sectionByName.get(cacheName) == null) sd.pullSectionInclude(sectionIncludeNode)
             // logger.warn("sd.sectionByName ${sd.sectionByName}")
-            return renderSection(cacheName)
+            return cacheName
         } else {
-            return renderSection(sectionName)
+            return sectionName
         }
+    }
+    String renderSectionInclude(MNode sectionIncludeNode) {
+        renderSection(getSectionIncludeName(sectionIncludeNode))
     }
 
     MNode getFormNode(String formName) {
@@ -1409,7 +1433,7 @@ class ScreenRenderImpl implements ScreenRender {
     String pushContext() { ec.contextStack.push(); return "" }
     String popContext() { ec.contextStack.pop(); return "" }
 
-    /** Call this at the beginning of a form-single or for form-list.@first-row-map and @last-row-map. Always call popContext() at the end of the form! */
+    /** Call this at the beginning of a form-single or for form-list.@map-first-row and @map-last-row. Always call popContext() at the end of the form! */
     String pushSingleFormMapContext(String mapExpr) {
         ContextStack cs = ec.contextStack
         Map valueMap = null
@@ -1422,6 +1446,13 @@ class ScreenRenderImpl implements ScreenRender {
         cs.put("_formMap", valueMap)
 
         return ""
+    }
+    Map getSingleFormMap(String mapExpr) {
+        Map valueMap = null
+        if (mapExpr != null && !mapExpr.isEmpty()) valueMap = (Map) ec.resourceFacade.expression(mapExpr, null)
+        if (valueMap instanceof EntityValue) valueMap = ((EntityValue) valueMap).getMap()
+        if (valueMap == null) valueMap = new HashMap()
+        return valueMap
     }
     String startFormListRow(ScreenForm.FormListRenderInfo listRenderInfo, Object listEntry, int index, boolean hasNext) {
         ContextStack cs = ec.contextStack
@@ -1640,7 +1671,7 @@ class ScreenRenderImpl implements ScreenRender {
         int afnSize = allFieldNodes.size()
         for (int i = 0; i < afnSize; i++) {
             MNode fieldNode = (MNode) allFieldNodes.get(i)
-            addFormFieldValue(fieldNode, fieldValues, false)
+            addFormFieldValue(fieldNode, fieldValues, (char) 'r')
         }
         return fieldValues
     }
@@ -1655,7 +1686,7 @@ class ScreenRenderImpl implements ScreenRender {
         int afnSize = allFieldNodes.size()
         for (int i = 0; i < afnSize; i++) {
             MNode fieldNode = (MNode) allFieldNodes.get(i)
-            addFormFieldValue(fieldNode, fieldValues, true)
+            addFormFieldValue(fieldNode, fieldValues, (char) 'h')
         }
 
         // add orderByField
@@ -1688,11 +1719,11 @@ class ScreenRenderImpl implements ScreenRender {
         ArrayList<Map<String, Object>> outRows = new ArrayList<>(rowsSize)
         for (int ri = 0; ri < rowsSize; ri++) {
             Map<String, Object> row = (Map<String, Object>) listObject.get(ri)
-            outRows.add(transformFormListRow(renderInfo, row))
+            outRows.add(transformFormListRow(renderInfo, row, (char) 'r'))
         }
         return outRows
     }
-    Map<String, Object> transformFormListRow(ScreenForm.FormListRenderInfo renderInfo, Map<String, Object> row) {
+    Map<String, Object> transformFormListRow(ScreenForm.FormListRenderInfo renderInfo, Map<String, Object> row, char rowType) {
         ArrayList<MNode> fieldNodeList = renderInfo.getFormNode().children("field")
         int fieldNodeListSize = fieldNodeList.size()
         Set<String> displayedFields = renderInfo.getDisplayedFields()
@@ -1712,7 +1743,7 @@ class ScreenRenderImpl implements ScreenRender {
                 cs.push(row)
                 cs.push()
                 try {
-                    addFormFieldValue(fieldNode, outRow, false)
+                    addFormFieldValue(fieldNode, outRow, rowType)
                 } finally {
                     cs.pop()
                     cs.pop()
@@ -1724,12 +1755,18 @@ class ScreenRenderImpl implements ScreenRender {
     }
 
     // NOTE: this takes a fieldValues Map as a parameter to populate because a singe form field may have multiple values
-    void addFormFieldValue(MNode fieldNode, Map<String, Object> fieldValues, boolean useHeader) {
+    void addFormFieldValue(MNode fieldNode, Map<String, Object> fieldValues, char rowType) {
         String fieldName = fieldNode.attribute("name")
 
         MNode activeSubNode = (MNode) null
-        if (useHeader) {
+        if (rowType == (char) 'h') {
             activeSubNode = fieldNode.first("header-field")
+        } else if (rowType == (char) 'f') {
+            activeSubNode = fieldNode.first("first-row-field")
+        } else if (rowType == (char) 's') {
+            activeSubNode = fieldNode.first("second-row-field")
+        } else if (rowType == (char) 'l') {
+            activeSubNode = fieldNode.first("last-row-field")
         } else {
             ArrayList<MNode> condFieldNodeList = fieldNode.children("conditional-field")
             for (int j = 0; j < condFieldNodeList.size(); j++) {
@@ -2019,7 +2056,8 @@ class ScreenRenderImpl implements ScreenRender {
         return transValue
     }
 
-    Map<String, Object> makeFormListSingleMap(ScreenForm.FormListRenderInfo renderInfo, Map<String, Object> listEntry, UrlInstance formTransitionUrl) {
+    Map<String, Object> makeFormListSingleMap(ScreenForm.FormListRenderInfo renderInfo, Map<String, Object> listEntry,
+            UrlInstance formTransitionUrl, String rowType) {
         MNode formNode = renderInfo.getFormNode()
         Map<String, Object> outMap = new LinkedHashMap<>()
 
@@ -2028,7 +2066,7 @@ class ScreenRenderImpl implements ScreenRender {
         outMap.putAll(getFormHiddenParameters(formNode))
 
         // listEntry fields before boilerplate fields below
-        Map<String, Object> row = transformFormListRow(renderInfo, listEntry)
+        Map<String, Object> row = transformFormListRow(renderInfo, listEntry, rowType.charAt(0))
         outMap.putAll(row)
 
         outMap.put("moquiFormName", formNode.attribute("name"))
@@ -2038,7 +2076,8 @@ class ScreenRenderImpl implements ScreenRender {
 
         return outMap
     }
-    Map<String, Object> makeFormListMultiMap(ScreenForm.FormListRenderInfo renderInfo, ArrayList<Map<String, Object>> listObject, UrlInstance formTransitionUrl) {
+    Map<String, Object> makeFormListMultiMap(ScreenForm.FormListRenderInfo renderInfo,
+            ArrayList<Map<String, Object>> listObject, UrlInstance formTransitionUrl) {
         MNode formNode = renderInfo.getFormNode()
         Map<String, Object> outMap = new LinkedHashMap<>()
 
@@ -2050,7 +2089,7 @@ class ScreenRenderImpl implements ScreenRender {
         int listSize = listObject.size()
         for (int i = 0; i < listSize; i++) {
             Map<String, Object> listEntry = (Map<String, Object>) listObject.get(i)
-            Map<String, Object> row = transformFormListRow(renderInfo, listEntry)
+            Map<String, Object> row = transformFormListRow(renderInfo, listEntry, (char) 'r')
             for (Map.Entry<String, Object> mapEntry in row.entrySet()) {
                 outMap.put(mapEntry.getKey() + "_" + i, mapEntry.getValue())
             }
@@ -2329,6 +2368,7 @@ class ScreenRenderImpl implements ScreenRender {
                 boolean active = (nextItem == subscreensItem.name)
                 Map itemMap = [name:subscreensItem.name, title:ec.resource.expand(subscreensItem.menuTitle, ""),
                                path:screenPath, pathWithParams:pathWithParams, image:image, imageType:imageType]
+                if (subscreensItem.menuInclude) itemMap.menuInclude = true
                 if (active) itemMap.active = true
                 if (screenUrlInstance.disableLink) itemMap.disableLink = true
                 subscreensList.add(itemMap)

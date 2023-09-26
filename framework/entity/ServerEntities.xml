@@ -116,9 +116,9 @@ along with this software (see the LICENSE.md file). If not, see
         <field name="thruDate" type="date-time"/>
         <relationship type="one-nofk" related="moqui.server.Visitor"/>
         <relationship type="one-nofk" related="moqui.security.UserAccount"/>
-        <relationship type="one-nofk" title="ClientIpStateProv" related="Geo">
+        <relationship type="one-nofk" title="ClientIpStateProv" related="moqui.basic.Geo">
             <key-map field-name="clientIpStateProvGeoId" related="geoId"/></relationship>
-        <relationship type="one-nofk" title="ClientIpCountry" related="Geo">
+        <relationship type="one-nofk" title="ClientIpCountry" related="moqui.basic.Geo">
             <key-map field-name="clientIpCountryGeoId" related="geoId"/></relationship>
         <!-- expensive for updates <index name="VisitThruIndex" unique="false"><index-field name="thruDate"/></index> -->
         <index name="VISIT_USER_ACC"><index-field name="userId"/></index>
@@ -196,6 +196,9 @@ along with this software (see the LICENSE.md file). If not, see
         <field name="username" type="text-short"/>
         <field name="password" type="text-medium" encrypt="true"/>
         <field name="emailAddress" type="text-medium"/>
+        <!-- To pull an image from a remote registryLocation, you may need to generate a token using a command example: AWS-ECR -->
+        <!-- Note: if you are using authTokenCmd to authenticate on registry then must keep the password field empty simply-->
+        <field name="authTokenCmd" type="text-medium"/>
         <relationship type="one" related="moqui.server.instance.InstanceImageType" short-alias="imageType"/>
         <relationship type="one" related="moqui.server.instance.InstanceHostType" short-alias="hostType"/>
     </entity>
