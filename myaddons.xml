@@ -33,7 +33,7 @@
     <component name="moqui-coreconnect-fis" group="mkdecisiondev" version="v1.6.1" branch="master"/>
     <component name="moqui-pac4j-authentication" group="mkdecisiondev" version="v1.4.0" branch="master"/>
     <component name="moqui-naics" group="mkdecisiondev" version="v1.3.0" branch="master"/>
-    <component name="moqui-graphql" group="mkdecisiondev" version="v1.3.0-alk" branch="master"/>
+    <component name="moqui-graphql" group="mkdecisiondev" version="v1.4.0" branch="master"/>
     <component name="moqui-datawarehouse" group="mkdecisiondev" version="" branch="master"/>
     <component name="close-banker-portal" group="mkdecisiondev" version="" branch="master"/>
     <component name="moqui-secure-headers" group="mkdecisiondev" version="" branch="master"/>
