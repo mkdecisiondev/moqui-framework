@@ -1829,6 +1829,7 @@ class ScreenRenderImpl implements ScreenRender {
                 String fieldValue = (String) null
                 String textAttr = widgetNode.attribute("text")
                 String currencyAttr = widgetNode.attribute("currency-unit-field")
+                String currencyNoSymbolAttr = widgetNode.attribute("currency-hide-symbol")
                 if (textAttr != null && ! textAttr.isEmpty()) {
                     String textMapAttr = widgetNode.attribute("text-map")
                     Map textMap = (Map) null
@@ -1839,9 +1840,16 @@ class ScreenRenderImpl implements ScreenRender {
                     } else {
                         fieldValue = ec.resourceFacade.expand(textAttr, null)
                     }
-                    if (currencyAttr != null && !currencyAttr.isEmpty())
-                        fieldValue = ec.l10nFacade.formatCurrency(fieldValue, ec.resourceFacade.expression(currencyAttr, null) as String)
+                    if (currencyAttr != null && !currencyAttr.isEmpty()) {
+                        if (currencyNoSymbolAttr == "true")
+                            fieldValue = ec.l10nFacade.formatCurrencyNoSymbol(fieldValue, ec.resourceFacade.expression(currencyAttr, null) as String)
+                        else
+                            fieldValue = ec.l10nFacade.formatCurrency(fieldValue, ec.resourceFacade.expression(currencyAttr, null) as String)
+                    }
                 } else if (currencyAttr != null && !currencyAttr.isEmpty()) {
+                    if (currencyNoSymbolAttr == "true")
+                        fieldValue = ec.l10nFacade.formatCurrencyNoSymbol(getFieldValue(fieldNode, ""), ec.resourceFacade.expression(currencyAttr, null) as String)
+                    else
                     fieldValue = ec.l10nFacade.formatCurrency(getFieldValue(fieldNode, ""), ec.resourceFacade.expression(currencyAttr, null) as String)
                 } else {
                     fieldValue = getFieldValueString(widgetNode)
