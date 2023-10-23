@@ -152,6 +152,12 @@ public class RestClient {
             headerList.add(new KeyValueString(entry.getKey(), entry.getValue()));
         return this;
     }
+    public Map<String, String> getHeaders() {
+        Map<String, String> headers = new HashMap<>();
+        for (KeyValueString nvp : headerList) headers.put(nvp.key, nvp.value);
+        return headers;
+    }
+
 
     public RestClient addHeader(String name, String value) {
         headerList.add(new KeyValueString(name, value));
