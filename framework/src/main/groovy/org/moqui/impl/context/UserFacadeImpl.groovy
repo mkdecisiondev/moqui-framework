@@ -707,7 +707,7 @@ class UserFacadeImpl implements UserFacade {
             // others to consider handling differently (these all inherit from AuthenticationException):
             //     UnknownAccountException, IncorrectCredentialsException, ExpiredCredentialsException,
             //     CredentialsException, LockedAccountException, DisabledAccountException, ExcessiveAttemptsException
-            eci.messageFacade.addError(ae.message)
+            eci.messageFacade.addError(eci.l10n.localize("Invalid username or password"))
             return false
         }
         return true
