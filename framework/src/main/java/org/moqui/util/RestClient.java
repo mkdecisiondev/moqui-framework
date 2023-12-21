@@ -158,7 +158,6 @@ public class RestClient {
         return headers;
     }
 
-
     public RestClient addHeader(String name, String value) {
         headerList.add(new KeyValueString(name, value));
         return this;
@@ -222,6 +221,13 @@ public class RestClient {
         bodyParameterList.add(new KeyValueString(name, value));
         return this;
     }
+
+    public Map<String, String> getBodyParameters() {
+        Map<String, String> bodyParams = new HashMap<>();
+        for (KeyValueString nvp : bodyParameterList) bodyParams.put(nvp.key, nvp.value);
+        return bodyParams;
+    }
+
     /** Add a field part to a multi part request **/
     public RestClient addFieldPart(String field, String value) {
         if (method != Method.POST) throw new IllegalStateException("Can only use multipart body with POST method, not supported for method " + method + "; if you need a different effective request method try using the X-HTTP-Method-Override header");
