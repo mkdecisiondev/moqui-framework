@@ -22,7 +22,7 @@
     <component name="moqui-mk-dashboard" group="mkdecisiondev" version="v1.30.0" branch="master"/>
     <component name="close-customer-portal" group="mkdecisiondev" version="v1.10.0" branch="master"/>
     <component name="moqui-html-pdf" group="mkdecisiondev" version="v1.4.0" branch="master"/>
-    <component name="mk-integrations" group="mkdecisiondev" version="v1.34.0" branch="master"/>
+    <component name="mk-integrations" group="mkdecisiondev" version="v1.34.1" branch="master"/>
     <component name="moqui-creditconnect" group="mkdecisiondev" version="v1.10.0" branch="master"/>
     <component name="moqui-creditconnect-experian" group="mkdecisiondev" version="v1.10.0" branch="master"/>
     <component name="moqui-creditconnect-transunion" group="mkdecisiondev" version="v1.9.0" branch="master"/>
