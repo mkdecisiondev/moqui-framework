@@ -11,12 +11,12 @@
     <component name="MarbleERP" group="mkdecisiondev" version="v1.3.0-alk" branch="master"/>
 
     <!-- ignite components -->
-    <component name="mk-store" group="mkdecisiondev" version="v1.38.0" branch="master"/>
+    <component name="mk-store" group="mkdecisiondev" version="v1.38.1" branch="master"/>
     <component name="moqui-credit-offers" group="mkdecisiondev" version="v1.8.0" branch="master"/>
     <component name="daolos-vendor-dashboard" group="mkdecisiondev" version="v1.13.0" branch="master"/>
     <component name="moqui-financial-worksheet" group="mkdecisiondev" version="v1.6.0" branch="master"/>
     <component name="moqui-close-decision" group="mkdecisiondev" version="v1.26.0" branch="master"/>
-    <component name="moqui-close" group="mkdecisiondev" version="v1.41.0" branch="master"/>
+    <component name="moqui-close" group="mkdecisiondev" version="v1.41.1" branch="master"/>
     <component name="mk-services" group="mkdecisiondev" version="v1.39.0" branch="master"/>
     <component name="moqui-ccos" group="mkdecisiondev" version="v1.20.0" branch="master"/>
     <component name="moqui-mk-dashboard" group="mkdecisiondev" version="v1.33.0" branch="master"/>
