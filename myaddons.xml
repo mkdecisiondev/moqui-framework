@@ -11,13 +11,13 @@
     <component name="MarbleERP" group="mkdecisiondev" version="v1.3.0-alk" branch="master"/>
 
     <!-- ignite components -->
-    <component name="mk-store" group="mkdecisiondev" version="v1.38.1" branch="master"/>
+    <component name="mk-store" group="mkdecisiondev" version="v1.38.2" branch="master"/>
     <component name="moqui-credit-offers" group="mkdecisiondev" version="v1.8.0" branch="master"/>
     <component name="daolos-vendor-dashboard" group="mkdecisiondev" version="v1.13.0" branch="master"/>
     <component name="moqui-financial-worksheet" group="mkdecisiondev" version="v1.6.0" branch="master"/>
     <component name="moqui-close-decision" group="mkdecisiondev" version="v1.26.0" branch="master"/>
     <component name="moqui-close" group="mkdecisiondev" version="v1.41.1" branch="master"/>
-    <component name="mk-services" group="mkdecisiondev" version="v1.39.0" branch="master"/>
+    <component name="mk-services" group="mkdecisiondev" version="v1.40.0" branch="master"/>
     <component name="moqui-ccos" group="mkdecisiondev" version="v1.20.0" branch="master"/>
     <component name="moqui-mk-dashboard" group="mkdecisiondev" version="v1.33.0" branch="master"/>
     <component name="close-customer-portal" group="mkdecisiondev" version="v1.13.0" branch="master"/>
@@ -40,11 +40,8 @@
     <component name="alkami-dev-toolkit" group="mkdecisiondev" version="" branch="dev"/>
 
     <!-- customer data components -->
-    <component name="close-alabamacu-data" group="mkdecisiondev" version="" branch="master"/>
     <component name="close-wafdbank-data" group="mkdecisiondev" version="" branch="master"/>
     <component name="close-mycsbin-data" group="mkdecisiondev" version="" branch="master"/>
-    <component name="close-cuoutdoors-data" group="mkdecisiondev" version="" branch="master"/>
-    <component name="close-evergreenbank-data" group="mkdecisiondev" version="" branch="master"/>
     <component name="close-pointbank-data" group="mkdecisiondev" version="" branch="master"/>
     <component name="close-ambank-data" group="mkdecisiondev" version="" branch="master"/>
     <component name="close-bankersbank-data" group="mkdecisiondev" version="" branch="master"/>
@@ -55,7 +52,6 @@
     <component name="close-demo-data" group="mkdecisiondev" version="" branch="master"/>
     <component name="close-beneficialsb-data" group="mkdecisiondev" version="" branch="master"/>
     <component name="close-equitable-data" group="mkdecisiondev" version="" branch="master"/>
-    <component name="close-becu-data" group="mkdecisiondev" version="" branch="master"/>
     <component name="close-ubb-data" group="mkdecisiondev" version="" branch="master"/>
     <component name="close-suttonbank-data" group="mkdecisiondev" version="" branch="master"/>
     <component name="close-fnblasanimas-data" group="mkdecisiondev" version="" branch="master"/>
@@ -91,13 +87,10 @@
     <component-set name="base-close-keycloak" components="moqui-secure-headers,close-customer-portal,daolos-vendor-dashboard,mk-identity,mk-idology,mk-integrations,mk-services,mk-store,moqui-ccos,moqui-close,moqui-close-decision,moqui-coreconnect,moqui-coreconnect-fis,moqui-credit-offers,moqui-creditconnect,moqui-creditconnect-experian,moqui-creditconnect-transunion,moqui-financial-worksheet,moqui-graphql,moqui-html-pdf,moqui-mk-dashboard,moqui-naics,moqui-pac4j-authentication,moqui-preciseid"/>
 
     <!-- customer component sets -->
-    <component-set name="moqui-close-alabamacu" sets="base-moqui,base-close-keycloak" components="close-alabamacu-data"/>
     <component-set name="moqui-close-ambank" sets="base-moqui,base-close-keycloak" components="close-ambank-data"/>
     <component-set name="moqui-close-bankersbank" sets="base-moqui,base-close-keycloak" components="close-bankersbank-data"/>
     <component-set name="moqui-close-bbok" sets="base-moqui,base-close-keycloak" components="close-bbok-data"/>
-    <component-set name="moqui-close-becu" sets="base-moqui,base-close-keycloak" components="close-becu-data"/>
     <component-set name="moqui-close-beneficialsb" sets="base-moqui,base-close-keycloak" components="close-beneficialsb-data"/>
-    <component-set name="moqui-close-cuoutdoors" sets="base-moqui,base-close-keycloak" components="close-cuoutdoors-data"/>
     <component-set name="moqui-close-demo" sets="base-moqui,base-close-keycloak"/>
     <component-set name="moqui-close-equitableonline" sets="base-moqui,base-close-keycloak" components="close-equitable-data"/>
     <component-set name="moqui-close-firstbankal" sets="base-moqui,base-close-keycloak" components="close-firstbankal-data"/>
