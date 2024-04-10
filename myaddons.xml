@@ -75,11 +75,9 @@
     <component name="close-revfcu-data" group="mkdecisiondev" version="" branch="master"/>
     <component name="close-merckemployeesfcu-data" group="mkdecisiondev" version="" branch="master"/>
     <component name="close-marketusafcu-data" group="mkdecisiondev" version="" branch="master"/>
-    <component name="close-nutmegstatefcu-data" group="mkdecisiondev" version="" branch="master"/>
     <component name="close-radiantcu-data" group="mkdecisiondev" version="" branch="master"/>
     <component name="close-heartlandkscu-data" group="mkdecisiondev" version="" branch="master"/>
     <component name="close-gatecitybank-data" group="mkdecisiondev" version="" branch="master"/>
-    <component name="close-iccu-data" group="mkdecisiondev" version="" branch="master"/>
     <component name="close-tinkerfc-data" group="mkdecisiondev" version="" branch="master"/>
 
     <!-- base component sets -->
@@ -121,11 +119,9 @@
     <component-set name="moqui-close-cutx" sets="base-moqui,base-close-keycloak" components="close-cutx-data"/>
     <component-set name="moqui-close-merckemployeesfcu" sets="base-moqui,base-close-keycloak" components="close-merckemployeesfcu-data"/>
     <component-set name="moqui-close-marketusafcu" sets="base-moqui,base-close-keycloak" components="close-marketusafcu-data"/>
-    <component-set name="moqui-close-nutmegstatefcu" sets="base-moqui,base-close-keycloak" components="close-nutmegstatefcu-data"/>
     <component-set name="moqui-close-heartlandkscu" sets="base-moqui,base-close-keycloak" components="close-heartlandkscu-data"/>
     <component-set name="moqui-close-radiantcu" sets="base-moqui,base-close-keycloak" components="close-radiantcu-data"/>
     <component-set name="moqui-close-gatecitybank" sets="base-moqui,base-close-keycloak" components="close-gatecitybank-data"/>
-    <component-set name="moqui-close-iccu" sets="base-moqui,base-close-keycloak" components="close-iccu-data"/>
     <component-set name="moqui-close-tinkerfc" sets="base-moqui,base-close-keycloak" components="close-tinkerfc-data"/>
 </addons>
 
