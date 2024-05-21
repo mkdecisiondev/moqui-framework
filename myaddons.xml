@@ -93,7 +93,7 @@
     <component-set name="moqui-close-bankersbank" sets="base-moqui,base-close-keycloak" components="close-bankersbank-data"/>
     <component-set name="moqui-close-bbok" sets="base-moqui,base-close-keycloak" components="close-bbok-data"/>
     <component-set name="moqui-close-beneficialsb" sets="base-moqui,base-close-keycloak" components="close-beneficialsb-data"/>
-    <component-set name="moqui-close-demo" sets="base-moqui,base-close-keycloak"/>
+    <component-set name="moqui-close-demo" sets="base-moqui,base-close-keycloak" components="close-demo-data"/>
     <component-set name="moqui-close-equitableonline" sets="base-moqui,base-close-keycloak" components="close-equitable-data"/>
     <component-set name="moqui-close-firstbankal" sets="base-moqui,base-close-keycloak" components="close-firstbankal-data"/>
     <component-set name="moqui-close-firstcommunitybank" sets="base-moqui,base-close-keycloak" components="close-firstcommunity-data"/>
