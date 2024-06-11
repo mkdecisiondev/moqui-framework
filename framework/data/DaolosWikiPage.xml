@@ -28,7 +28,7 @@
 
     <moqui.resource.DbResource resourceId="DAOLOS_CLOSE_FILE" parentResourceId="DAOLOS_APPLICATIONS_DIR" filename="versionNumber.html" isFile="Y">
         <file mimeType="text/html" versionName="01" rootVersionName="01">
-            <fileData><![CDATA[v1.11.1ssoHF]]></fileData>
+            <fileData><![CDATA[v2024.sec1]]></fileData>
             <histories versionName="01" versionDate="1631539800000" isDiff="N"/>
         </file>
     </moqui.resource.DbResource>
