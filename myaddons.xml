@@ -2,12 +2,12 @@
 
     <!-- moqui components -->
     <runtime name="moqui-runtime" group="mkdecisiondev" version="v3.4.1-alk" branch="master"/>
-    <component name="mantle-udm" group="mkdecisiondev" version="v2.6.1-alk" branch="master"/>
-    <component name="mantle-usl" group="mkdecisiondev" version="v3.2.1-alk" branch="master"/>
+    <component name="mantle-udm" group="mkdecisiondev" version="v2.6.2-alk" branch="master"/>
+    <component name="mantle-usl" group="mkdecisiondev" version="v3.2.2-alk" branch="master"/>
     <component name="moqui-aws" group="mkdecisiondev" version="v1.7.0-alk" branch="master"/>
     <component name="moqui-fop" group="mkdecisiondev" version="v1.4.0-alk" branch="master"/>
     <component name="moqui-sftp" group="mkdecisiondev" version="v1.2.0-alk" branch="master"/>
-    <component name="SimpleScreens" group="mkdecisiondev" version="v2.8.0-alk" branch="master"/>
+    <component name="SimpleScreens" group="mkdecisiondev" version="v2.8.1-alk" branch="master"/>
     <component name="MarbleERP" group="mkdecisiondev" version="v1.3.0-alk" branch="master"/>
 
     <!-- ignite components -->
@@ -82,6 +82,9 @@
     <component name="close-iccu-data" group="mkdecisiondev" version="" branch="master"/>
     <component name="close-tinkerfcu-data" group="mkdecisiondev" version="" branch="master"/>
     <component name="close-communityfirstcu-data" group="mkdecisiondev" version="" branch="master"/>
+    <component name="close-avbbank-data" group="mkdecisiondev" version="" branch="master"/>
+    <component name="close-Intouchcu-data" group="mkdecisiondev" version="" branch="master"/>
+    
 
     <!-- base component sets -->
     <component-set name="base-moqui" components="moqui-aws,moqui-fop,moqui-sftp,mantle-udm,mantle-usl,SimpleScreens,MarbleERP"/>
@@ -129,4 +132,6 @@
     <component-set name="moqui-close-iccu" sets="base-moqui,base-close-keycloak" components="close-iccu-data"/>
     <component-set name="moqui-close-tinkerfcu" sets="base-moqui,base-close-keycloak" components="close-tinkerfcu-data"/>
     <component-set name="moqui-close-communityfirstcu" sets="base-moqui,base-close-keycloak" components="close-communityfirstcu-data"/>
+    <component-set name="moqui-close-avbbank" sets="base-moqui,base-close-keycloak" components="close-avbbank-data"/>
+    <component-set name="moqui-close-Intouchcu" sets="base-moqui,base-close-keycloak" components="close-Intouchcu-data"/>
 </addons>
