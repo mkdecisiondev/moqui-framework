@@ -182,7 +182,7 @@ class MoquiServlet extends HttpServlet {
         ExecutionContextFactoryImpl.WebappInfo webappInfo = ecfi.getWebappInfo(webappName)
         String originHeader = request.getHeader("Origin")
 
-        if (originHeader != null && !originHeader.isEmpty() && webappInfo != null &&
+        if (originHeader != null && !originHeader.isEmpty() && !"null".equals(originHeader) && webappInfo != null &&
                 !"false".equals(webappInfo.webappNode.attribute("handle-cors"))) {
 
             originHeader = originHeader.toLowerCase()
