@@ -155,7 +155,7 @@ dependencies {
     api module('com.sun.mail:javax.mail:1.6.2') // CDDL
 
     // Joda Time (used by elasticsearch, aws)
-    api 'joda-time:joda-time:2.12.5' // Apache 2.0
+    api 'joda-time:joda-time:2.12.6' // Apache 2.0
 
     // JSoup (HTML parser, cleaner)
     api 'org.jsoup:jsoup:1.17.1' // MIT
