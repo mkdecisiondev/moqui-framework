@@ -17,13 +17,13 @@
     <component name="daolos-vendor-dashboard" group="mkdecisiondev" version="v1.13.0" branch="master"/>
     <component name="moqui-financial-worksheet" group="mkdecisiondev" version="v1.7.0" branch="master"/>
     <component name="moqui-close-decision" group="mkdecisiondev" version="v1.33.0" branch="master"/>
-    <component name="moqui-close" group="mkdecisiondev" version="v1.48.4" branch="master"/>
-    <component name="mk-services" group="mkdecisiondev" version="v1.49.2" branch="master"/>
+    <component name="moqui-close" group="mkdecisiondev" version="v1.48.5" branch="master"/>
+    <component name="mk-services" group="mkdecisiondev" version="v1.49.3" branch="master"/>
     <component name="moqui-ccos" group="mkdecisiondev" version="v1.20.0" branch="master"/>
     <component name="moqui-mk-dashboard" group="mkdecisiondev" version="v1.39.3" branch="master"/>
     <component name="close-customer-portal" group="mkdecisiondev" version="v1.16.0" branch="master"/>
     <component name="moqui-html-pdf" group="mkdecisiondev" version="v1.4.0" branch="master"/>
-    <component name="mk-integrations" group="mkdecisiondev" version="v1.45.3" branch="master"/>
+    <component name="mk-integrations" group="mkdecisiondev" version="v1.45.4" branch="master"/>
     <component name="moqui-creditconnect" group="mkdecisiondev" version="v1.11.2" branch="master"/>
     <component name="moqui-creditconnect-experian" group="mkdecisiondev" version="v1.10.1" branch="master"/>
     <component name="moqui-creditconnect-transunion" group="mkdecisiondev" version="v1.9.1" branch="master"/>
